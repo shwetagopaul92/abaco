@@ -13,11 +13,11 @@ With the requirements in place, you are now ready to get started.
 * We need to create an OAuth Client:
 
   ```
-  >>> from agavepy.agave import Agave
-  >>> ag = Agave(api_server='https://api.tacc.utexas.edu',
+  from agavepy.agave import Agave
+  ag = Agave(api_server='https://api.tacc.utexas.edu',
   ...            username='your username',
   ...            password='your password')
-  >>> ag.clients.create(body={'clientName': 'enter a client name'})
+  ag.clients.create(body={'clientName': 'enter a client name'})
   ```
 
   Save your consumerKey and consumerSecret. The OAuth client keys can be reused as well. 
@@ -38,7 +38,7 @@ With the requirements in place, you are now ready to get started.
 
   For this example, create a new local directory to hold your work.
 
-  * A Basic Python File hello-world.py which prints "hello-world" when run. 
+* A Basic Python File hello-world.py which prints "hello-world" when run. 
 
   ```
   # hello-world.py
@@ -64,10 +64,10 @@ With the requirements in place, you are now ready to get started.
   Register the Docker image as an Abaco actor with teh Agave client. 
 
   ```
-  >>> from agavepy.agave import Agave
-  >>> ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
-  >>> my_actor = {"image": "user/my_actor", "name": "word_counter", "description": "Actor that counts words."}
-  >>> ag.actors.add(body=my_actor)
+  from agavepy.agave import Agave
+  ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
+  my_actor = {"image": "user/my_actor", "name": "word_counter", "description": "Actor that counts words."}
+  ag.actors.add(body=my_actor)
 
   ``` 
 
@@ -76,7 +76,7 @@ With the requirements in place, you are now ready to get started.
 * Check the status of the actor :
 
   ```
-  >>> ag.actors.get(actorId='O08Nzb3mRA7Bz')
+  ag.actors.get(actorId='O08Nzb3mRA7Bz')
 
   ```
 
@@ -85,7 +85,7 @@ With the requirements in place, you are now ready to get started.
   We can test the Actor:
 
   ``` 
-  >>> ag.actors.sendMessage(actorId='actorId',
+  ag.actors.sendMessage(actorId='actorId',
                            body={'message': 'Actor, this is test!'})
   ```
 
@@ -95,7 +95,7 @@ With the requirements in place, you are now ready to get started.
   To get status of the execution, use the actor id and execution id:
 
   ``` 
-  >>> ag.actors.getExecution(actorId=actorId, executionId=executionId)
+  ag.actors.getExecution(actorId=actorId, executionId=executionId)
   ```
 
 * View the logs
@@ -103,7 +103,7 @@ With the requirements in place, you are now ready to get started.
   Logs endpoint makes the standard out from an actor execution available for viewing. 
 
   ``` 
-  >>> ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
+  ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
   ```
 
 
