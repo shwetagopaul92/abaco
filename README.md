@@ -66,7 +66,7 @@ With the requirements in place, you are now ready to get started.
   ```
   from agavepy.agave import Agave
   ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
-  my_actor = {"image": "user/my_actor", "name": "word_counter", "description": "Actor that counts words."}
+  my_actor = {"image": "user/my_actor", "name": "hello-world-actor", "description": "Simple actor to say hello-world."}
   ag.actors.add(body=my_actor)
 
   ``` 
@@ -76,7 +76,7 @@ With the requirements in place, you are now ready to get started.
 * Check the status of the actor :
 
   ```
-  ag.actors.get(actorId='O08Nzb3mRA7Bz')
+  ag.actors.get(actorId='actorId')
 
   ```
 
