@@ -24,87 +24,87 @@ With the requirements in place, you are now ready to get started.
 
 * Once we have this in place, generate a Token: 
 
-```
-ag.token.create()
-```
-Grab the token generated and store it. 
+  ```
+  ag.token.create()
+  ```
+  Grab the token generated and store it. 
 
-Running ` ag.profiles.get() ` would show the current user's profile. 
+  Running ` ag.profiles.get() ` would show the current user's profile. 
 
 
 ## Exercise: Deploy and test a hello-world container with Abaco
 
-Let's begin with a simple example of printing "hello-world" using an Abaco Actor. 
+  Let's begin with a simple example of printing "hello-world" using an Abaco Actor. 
 
-For this example, create a new local directory to hold your work.
+  For this example, create a new local directory to hold your work.
 
-* A Basic Python File hello-world.py which prints "hello-world" when run. 
+  * A Basic Python File hello-world.py which prints "hello-world" when run. 
 
-```
-# hello-world.py
-print("Hello, world!")
+  ```
+  # hello-world.py
+  print("Hello, world!")
 
-``` 
+  ``` 
 
 * Within the same directory, create a Dockerfile to register the function as an Abaco actor. 
 
-```
-FROM python:3.6
+  ```
+  FROM python:3.6
 
-ADD hello-world.py /hello-world.py
+  ADD hello-world.py /hello-world.py
 
-CMD ["python", "/hello-world.py"]
-```
+  CMD ["python", "/hello-world.py"]
+  ```
 
 ` docker build -t dockerhub_username/actorimagetag . 
   docker push dockerhub_username/actorimagetag `
   
   
 * Register the Actor 
-Register the Docker image as an Abaco actor with teh Agave client. 
+  Register the Docker image as an Abaco actor with teh Agave client. 
 
-```
->>> from agavepy.agave import Agave
->>> ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
->>> my_actor = {"image": "user/my_actor", "name": "word_counter", "description": "Actor that counts words."}
->>> ag.actors.add(body=my_actor)
+  ```
+  >>> from agavepy.agave import Agave
+  >>> ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
+  >>> my_actor = {"image": "user/my_actor", "name": "word_counter", "description": "Actor that counts words."}
+  >>> ag.actors.add(body=my_actor)
 
-``` 
+  ``` 
 
-The output prints an id for the actor registered. 
+  The output prints an id for the actor registered. 
 
 * Check the status of the actor :
 
-```
->>> ag.actors.get(actorId='O08Nzb3mRA7Bz')
+  ```
+  >>> ag.actors.get(actorId='O08Nzb3mRA7Bz')
 
-```
+  ```
 
 * Executing the Actor
 
-We can test the Actor:
+  We can test the Actor:
 
-``` 
->>> ag.actors.sendMessage(actorId='actorId',
-                          body={'message': 'Actor, this is test!'})
-```
+  ``` 
+  >>> ag.actors.sendMessage(actorId='actorId',
+                           body={'message': 'Actor, this is test!'})
+  ```
 
-This started an execution for the actor and throws an execution id. 
-Once a message is sent to an actor, workers for the actor take the message and start an actor container with the message.  
+  This started an execution for the actor and throws an execution id. 
+  Once a message is sent to an actor, workers for the actor take the message and start an actor container with the message.  
 
-To get status of the execution, use the actor id and execution id:
+  To get status of the execution, use the actor id and execution id:
 
-``` 
->>> ag.actors.getExecution(actorId=actorId, executionId=executionId)
-```
+  ``` 
+  >>> ag.actors.getExecution(actorId=actorId, executionId=executionId)
+  ```
 
 * View the logs
 
-- Logs endpoint makes the standard out from an actor execution available for viewing. 
+  Logs endpoint makes the standard out from an actor execution available for viewing. 
 
-``` 
->>> ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
-```
+  ``` 
+  >>> ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
+  ```
 
 
 
