@@ -18,6 +18,7 @@ With the requirements in place, you are now ready to get started.
   ...            username='your username',
   ...            password='your password')
   ag.clients.create(body={'clientName': 'enter a client name'})
+  
   ```
 
   Save your consumerKey and consumerSecret. The OAuth client keys can be reused as well. 
@@ -26,6 +27,7 @@ With the requirements in place, you are now ready to get started.
 
   ```
   ag.token.create()
+  
   ```
   Grab the token generated and store it. 
 
@@ -38,7 +40,7 @@ With the requirements in place, you are now ready to get started.
 
   For this example, create a new local directory to hold your work.
 
-* A Basic Python File hello-world.py with a function to print the message (e.g: hello-world! )  sent to the actor when run. 
+* A Basic Python File hello-world.py with a function to print the message (e.g: hello-world! ) sent to the actor when run. 
 
   ```
   # hello-world.py
@@ -47,15 +49,15 @@ With the requirements in place, you are now ready to get started.
 
   # function to print the message
   def say_hello(message):
-	    print(message)
+     print(message)
 
   def main():
-      context = get_context()
-	    message = context['raw_message']
-	    say_hello(message)
+     context = get_context()
+     message = context['raw_message']
+     say_hello(message)
 
   if __name__ == '__main__':
-      main()
+     main()
 
   ``` 
 
@@ -68,13 +70,15 @@ With the requirements in place, you are now ready to get started.
   RUN pip install --no-cache-dir agavepy
   
   # add the python script to docker container
-  ADD hello-world.py /hello-world.py
+  ADD hello.py /hello.py
   
   # command to run the python script
-  CMD ["python", "/hello-world.py"]
+  CMD ["python", "/hello.py"]
 
   ```
 
+  Build and push the docker image to Docker Hub. 
+  
   ```
   docker build -t dockerhub_username/actorimagetag . 
 
@@ -84,7 +88,7 @@ With the requirements in place, you are now ready to get started.
   
   
 * Register the Actor 
-  Register the Docker image as an Abaco actor with teh Agave client. 
+  Register the Docker image as an Abaco actor with the Agave client. 
 
   ```
   from agavepy.agave import Agave
@@ -95,7 +99,8 @@ With the requirements in place, you are now ready to get started.
   ``` 
   
   <img src="inst/add_actor.png" height="50" width="75">
-  The output prints an id for the actor registered. 
+  
+  The output prints an **actor id** for the actor registered. 
 
 * Check the status of the actor :
 
@@ -104,6 +109,8 @@ With the requirements in place, you are now ready to get started.
 
   ```
   <img src="inst/actor_status.png" width="250">
+  
+  When the actor's worker is initialized, it's **status** will change from SUBMITTED to READY. 
 
 * Executing the Actor
 
@@ -112,18 +119,20 @@ With the requirements in place, you are now ready to get started.
   ``` 
   ag.actors.sendMessage(actorId='actorId',
                            body={'message': 'Actor, this is test!'})
+  ag.actors.sendMessage(actorId='actorId', body={'message':'Hello-world!'})
   ```
   
   
   <img src="inst/send_message.png" width="250">
 
-  This started an execution for the actor and throws an execution id. 
+  This started an execution for the actor and throws an **execution id**. 
   Once a message is sent to an actor, workers for the actor take the message and start an actor container with the message.  
 
   To get status of the execution, use the actor id and execution id:
 
   ``` 
   ag.actors.getExecution(actorId=actorId, executionId=executionId)
+  
   ```
   
   <img src="inst/getExecution.png" width="250">
@@ -134,6 +143,7 @@ With the requirements in place, you are now ready to get started.
 
   ``` 
   ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
+  
   ```
   
   <img src="inst/execution_logs.png" width="250">
