@@ -8,6 +8,8 @@
 
 ## Getting Started
 
+### With Python-SDK
+
 With the requirements in place, you are now ready to get started. 
 
 * We need to create an OAuth Client:
@@ -150,6 +152,90 @@ With the requirements in place, you are now ready to get started.
 
 
 
+### With Abaco CLI
 
+## Getting Started
 
+* Clone the repository and create authentication tokan as shown below to get started 
 
+  ```
+  git clone https://github.com/TACC-Cloud/abaco-cli.git 
+  source abaco-cli/abaco-completion.sh
+  export PATH=$PATH:$PWD/abaco-cli/
+  auth-tokens-create -S
+
+  ```
+
+* There are multiple ~15 subcommands with the CLI. We can create, list, delete, update, submit, check logs etc with the abaco CLI. 
+
+* Here, we illustrate how to list, send message, view logs, delete the actor we created with the SDK. 
+
+  1. List the abaco names
+  
+      ``` 
+      abaco list
+     
+      ```
+     
+      Returns list of actor names, IDs, and statuses (or the JSON description of
+      an actor if an ID or alias is provided)
+     
+      Output: 
+     
+      > hello-world-actor  RxbWwWyWpealq  READY
+
+  2. Run the actor by sending a message
+  
+      ```
+      abaco submit -m "hello-world" RxbWwWyWpealq
+    
+      ```
+    
+      Output:
+      > R5jlv4RzKqQPe
+        hello-world
+
+      This prints the execution id.
+      
+  3. Check execution/job status 
+  
+     ``` 
+     abaco executions RxbWwWyWpealq R5jlv4RzKqQPe
+     
+     ```
+     
+     Output: 
+     
+     > pvkBpWRXGXl4z  COMPLETE
+     
+  4. Examine logs
+     
+     ```
+     abaco logs RxbWwWyWpealq R5jlv4RzKqQPe
+     
+     ```
+     
+     Output: 
+     
+     > Logs for execution R5jlv4RzKqQPe:
+       hello-world
+       
+   5. Sharing the actor
+      Giving READ permissions to another user. 
+      
+      ```
+      abaco permissions -u jfonner -p READ R5jlv4RzKqQPe
+      
+      ```
+   
+   6. Delete an actor
+   
+      ```
+      
+      abaco delete actorId
+      
+      ```
+      
+      Output:
+      
+      > Actor deleted successfully. 
