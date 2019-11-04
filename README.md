@@ -178,8 +178,6 @@ With the requirements in place, you are now ready to get started.
       Returns list of actor names, IDs, and statuses (or the JSON description of
       an actor if an ID or alias is provided)
      
-      Output: 
-     
       > hello-world-actor  RxbWwWyWpealq  READY
 
   2. Run the actor by sending a message
@@ -202,8 +200,6 @@ With the requirements in place, you are now ready to get started.
      
      ```
      
-     Output: 
-     
      > pvkBpWRXGXl4z  COMPLETE
      
   4. Examine logs
@@ -212,8 +208,6 @@ With the requirements in place, you are now ready to get started.
      abaco logs RxbWwWyWpealq R5jlv4RzKqQPe
      
      ```
-     
-     Output: 
      
      > Logs for execution R5jlv4RzKqQPe:
        hello-world
@@ -229,11 +223,8 @@ With the requirements in place, you are now ready to get started.
    6. Delete an actor
    
       ```
-      
       abaco delete actorId
       
       ```
-      
-      Output:
       
       > Actor deleted successfully. 
