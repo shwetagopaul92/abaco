@@ -154,8 +154,6 @@ With the requirements in place, you are now ready to get started.
 
 ### With Abaco CLI
 
-## Getting Started
-
 * Clone the repository and create authentication tokan as shown below to get started 
 
   ```
