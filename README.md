@@ -146,14 +146,14 @@ With the requirements in place, you are now ready to get started.
   ag.actors.getExecution(actorId=actorId, executionId=executionId)
   ```
   
- > {'_links': {'logs': 'https://api.tacc.utexas.edu/actors/v2/TACC-PROD_RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs', 'owner': 
-  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/TACC-
-  PROD_RxbWwWyWpealq/executions/zXpPjZmDVNDWr'}, 'actorId': 'RxbWwWyWpealq', 'apiServer': 'https://api.tacc.utexas.edu', 
-  'cpu': 0, 'executor': 'sgopal', 'exitCode': 0, 'finalState': {'Dead': False, 'Error': '', 'ExitCode': 0, 'FinishedAt': 
-  '2019-11-04T16:51:42.785892147Z', 'OOMKilled': False, 'Paused': False, 'Pid': 0, 'Restarting': False, 'Running': False, 
-  'StartedAt': '2019-11-04T16:51:42.448167824Z', 'Status': 'exited'}, 'id': 'zXpPjZmDVNDWr', 'io': 0, 'messageReceivedTime': 
-  '2019-11-04 16:51:31.502243', 'runtime': 1, 'startTime': '2019-11-04 16:51:41.754348', 'status': 'COMPLETE', 'workerId': 
-  'oAG8X0lvEJ0rR'}
+  > {'_links': {'logs': 'https://api.tacc.utexas.edu/actors/v2/TACC-PROD_RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs',  
+  'owner': 'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/TACC-
+   PROD_RxbWwWyWpealq/executions/zXpPjZmDVNDWr'}, 'actorId': 'RxbWwWyWpealq', 'apiServer': 'https://api.tacc.utexas.edu', 
+   'cpu': 0, 'executor': 'sgopal', 'exitCode': 0, 'finalState': {'Dead': False, 'Error': '', 'ExitCode': 0, 'FinishedAt': 
+   '2019-11-04T16:51:42.785892147Z', 'OOMKilled': False, 'Paused': False, 'Pid': 0, 'Restarting': False, 'Running': False, 
+   'StartedAt': '2019-11-04T16:51:42.448167824Z', 'Status': 'exited'}, 'id': 'zXpPjZmDVNDWr', 'io': 0, 'messageReceivedTime': 
+   '2019-11-04 16:51:31.502243', 'runtime': 1, 'startTime': '2019-11-04 16:51:41.754348', 'status': 'COMPLETE', 'workerId': 
+   'oAG8X0lvEJ0rR'}
 
 * View the logs
 
@@ -163,7 +163,7 @@ With the requirements in place, you are now ready to get started.
   ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
   ```
   
- > {'_links': {'execution': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr', 'owner': 
+  > {'_links': {'execution': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr', 'owner': 
    'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self':  
    'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs'}, 'logs': 'Hello-world!\n'}
 
