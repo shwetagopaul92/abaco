@@ -158,7 +158,7 @@ With the requirements in place, you are now ready to get started.
 
 * Here, we illustrate how to list, send message, view logs, delete the actor we created with the SDK. 
 
-  1.) List the abaco names
+  1) List the abaco names
   
       ``` 
       abaco list  
@@ -169,7 +169,7 @@ With the requirements in place, you are now ready to get started.
      
       > hello-world-actor  RxbWwWyWpealq  READY
 
-  2.) Run the actor by sending a message
+  2) Run the actor by sending a message
   
       ```
       abaco submit -m "hello-world" RxbWwWyWpealq
@@ -181,7 +181,7 @@ With the requirements in place, you are now ready to get started.
 
       This prints the execution id.
       
-  3.) Check execution/job status 
+  3) Check execution/job status 
   
      ``` 
      abaco executions RxbWwWyWpealq R5jlv4RzKqQPe   
@@ -189,7 +189,7 @@ With the requirements in place, you are now ready to get started.
      
      > pvkBpWRXGXl4z  COMPLETE
      
-  4.) Examine logs
+  4) Examine logs
      
      ```
      abaco logs RxbWwWyWpealq R5jlv4RzKqQPe   
@@ -198,14 +198,14 @@ With the requirements in place, you are now ready to get started.
      > Logs for execution R5jlv4RzKqQPe:
        hello-world
        
-   5.) Sharing the actor
+   5) Sharing the actor
       Giving READ permissions to another user. 
       
       ```
       abaco permissions -u jfonner -p READ R5jlv4RzKqQPe   
       ```
    
-   6.) Delete an actor
+   6) Delete an actor
    
       ```
       abaco delete actorId    
