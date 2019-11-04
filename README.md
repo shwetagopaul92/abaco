@@ -145,6 +145,8 @@ With the requirements in place, you are now ready to get started.
 
 ### With Abaco CLI
 
+- The Abaco CLI is a command line toolkit for developing, managing and using Abaco Actors.
+
 * Clone the repository and create authentication tokan as shown below to get started 
 
   ```
