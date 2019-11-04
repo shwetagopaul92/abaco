@@ -94,6 +94,14 @@ With the requirements in place, you are now ready to get started.
   ag.actors.add(body=my_actor)
   ``` 
   
+  > {'_links': {'executions': 'https://api.tacc.utexas.edu/actors/v2/pJ7q71MBjex1Z/executions', 'owner':        
+  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/pJ7q71MBjex1Z'},  
+  'createTime': '2019-11-04 16:30:07.224509', 'defaultEnvironment': {}, 'description': 'Simple actor to print hello-world.', 
+  'gid': 862347, 'hints': [], 'id': 'pJ7q71MBjex1Z', 'image': 'reshg/hello-world-actor', 'lastUpdateTime': '2019-11-04 
+  16:30:07.224509', 'link': '', 'mounts': [], 'name': 'hello-world-actor', 'owner': 'sgopal', 'privileged': False, 'queue': 
+  'default', 'state': {}, 'stateless': True, 'status': 'SUBMITTED', 'statusMessage': '', 'tasdir': '06935/sgopal', 'token': 
+  'false', 'type': 'none', 'uid': 862347, 'useContainerUid': False, 'webhook': ''}
+  
   <img src="inst/add_actor.png" height="50" width="75">
   
   The output prints an **actor id** for the actor registered. 
