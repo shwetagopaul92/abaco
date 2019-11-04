@@ -4,7 +4,7 @@
 
 1. TACC Account: https://portal.tacc.utexas.edu/account-request
 2. Create a Docker account: https://hub.docker.com/
-3. Install the TACC Cloud Python SDK
+3. Install the TACC Cloud Python SDK - ` pip install agavepy `
 
 ## Getting Started
 
@@ -34,7 +34,7 @@ With the requirements in place, you are now ready to get started.
   Running ` ag.profiles.get() ` would show the current user's profile. 
 
 
-## Exercise: Deploy and test a hello-world container with Abaco
+## Exercise: Deploy a hello-world container with Abaco
 
   Let's begin with a simple example of printing "hello-world" using an Abaco Actor. 
 
@@ -103,7 +103,7 @@ With the requirements in place, you are now ready to get started.
   ```
   ag.actors.get(actorId='actorId')
   ```
-  <img src="inst/actor_status.png" width="250">
+  <img src="inst/actor_status.png" width="100">
   
   When the actor's worker is initialized, it's **status** will change from SUBMITTED to READY. 
 
