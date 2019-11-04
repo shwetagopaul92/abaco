@@ -20,7 +20,6 @@ With the requirements in place, you are now ready to get started.
   ...            username='your username',
   ...            password='your password')
   ag.clients.create(body={'clientName': 'enter a client name'})
-  
   ```
 
   Save your consumerKey and consumerSecret. The OAuth client keys can be reused as well. 
@@ -29,7 +28,6 @@ With the requirements in place, you are now ready to get started.
 
   ```
   ag.token.create()
-  
   ```
   Grab the token generated and store it. 
 
@@ -60,7 +58,6 @@ With the requirements in place, you are now ready to get started.
 
   if __name__ == '__main__':
      main()
-
   ``` 
 
 * Within the same directory, create a Dockerfile to register the function as an Abaco actor. 
@@ -76,7 +73,6 @@ With the requirements in place, you are now ready to get started.
   
   # command to run the python script
   CMD ["python", "/hello.py"]
-
   ```
 
   Build and push the docker image to Docker Hub. 
@@ -84,8 +80,7 @@ With the requirements in place, you are now ready to get started.
   ```
   docker build -t dockerhub_username/actorimagetag . 
 
-  docker push dockerhub_username/actorimagetag 
-  
+  docker push dockerhub_username/actorimagetag  
   ```
   
   
@@ -97,7 +92,6 @@ With the requirements in place, you are now ready to get started.
   ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
   my_actor = {"image": "user/my_actor", "name": "hello-world-actor", "description": "Simple actor to say hello-world."}
   ag.actors.add(body=my_actor)
-
   ``` 
   
   <img src="inst/add_actor.png" height="50" width="75">
@@ -108,7 +102,6 @@ With the requirements in place, you are now ready to get started.
 
   ```
   ag.actors.get(actorId='actorId')
-
   ```
   <img src="inst/actor_status.png" width="250">
   
@@ -134,7 +127,6 @@ With the requirements in place, you are now ready to get started.
 
   ``` 
   ag.actors.getExecution(actorId=actorId, executionId=executionId)
-  
   ```
   
   <img src="inst/getExecution.png" width="250">
@@ -145,7 +137,6 @@ With the requirements in place, you are now ready to get started.
 
   ``` 
   ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
-  
   ```
   
   <img src="inst/execution_logs.png" width="250">
@@ -161,7 +152,6 @@ With the requirements in place, you are now ready to get started.
   source abaco-cli/abaco-completion.sh
   export PATH=$PATH:$PWD/abaco-cli/
   auth-tokens-create -S
-
   ```
 
 * There are multiple ~15 subcommands with the CLI. We can create, list, delete, update, submit, check logs etc with the abaco CLI. 
@@ -171,8 +161,7 @@ With the requirements in place, you are now ready to get started.
   1. List the abaco names
   
       ``` 
-      abaco list
-     
+      abaco list  
       ```
      
       Returns list of actor names, IDs, and statuses (or the JSON description of
@@ -184,7 +173,6 @@ With the requirements in place, you are now ready to get started.
   
       ```
       abaco submit -m "hello-world" RxbWwWyWpealq
-    
       ```
     
       Output:
@@ -196,8 +184,7 @@ With the requirements in place, you are now ready to get started.
   3. Check execution/job status 
   
      ``` 
-     abaco executions RxbWwWyWpealq R5jlv4RzKqQPe
-     
+     abaco executions RxbWwWyWpealq R5jlv4RzKqQPe   
      ```
      
      > pvkBpWRXGXl4z  COMPLETE
@@ -205,8 +192,7 @@ With the requirements in place, you are now ready to get started.
   4. Examine logs
      
      ```
-     abaco logs RxbWwWyWpealq R5jlv4RzKqQPe
-     
+     abaco logs RxbWwWyWpealq R5jlv4RzKqQPe   
      ```
      
      > Logs for execution R5jlv4RzKqQPe:
@@ -216,15 +202,13 @@ With the requirements in place, you are now ready to get started.
       Giving READ permissions to another user. 
       
       ```
-      abaco permissions -u jfonner -p READ R5jlv4RzKqQPe
-      
+      abaco permissions -u jfonner -p READ R5jlv4RzKqQPe   
       ```
    
    6. Delete an actor
    
       ```
-      abaco delete actorId
-      
+      abaco delete actorId    
       ```
       
       > Actor deleted successfully. 
