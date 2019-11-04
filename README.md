@@ -38,11 +38,24 @@ With the requirements in place, you are now ready to get started.
 
   For this example, create a new local directory to hold your work.
 
-* A Basic Python File hello-world.py which prints "hello-world" when run. 
+* A Basic Python File hello-world.py with a function to print the message (e.g: hello-world! )  sent to the actor when run. 
 
   ```
   # hello-world.py
-  print("Hello, world!")
+
+  from agavepy.actors import get_context
+
+  # function to print the message
+  def say_hello(message):
+	    print(message)
+
+  def main():
+      context = get_context()
+	    message = context['raw_message']
+	    say_hello(message)
+
+  if __name__ == '__main__':
+      main()
 
   ``` 
 
@@ -51,13 +64,23 @@ With the requirements in place, you are now ready to get started.
   ```
   FROM python:3.6
 
+  # install agavepy
+  RUN pip install --no-cache-dir agavepy
+  
+  # add the python script to docker container
   ADD hello-world.py /hello-world.py
-
+  
+  # command to run the python script
   CMD ["python", "/hello-world.py"]
+
   ```
 
-` docker build -t dockerhub_username/actorimagetag . 
-  docker push dockerhub_username/actorimagetag `
+  ```
+  docker build -t dockerhub_username/actorimagetag . 
+
+  docker push dockerhub_username/actorimagetag 
+  
+  ```
   
   
 * Register the Actor 
@@ -70,7 +93,8 @@ With the requirements in place, you are now ready to get started.
   ag.actors.add(body=my_actor)
 
   ``` 
-
+  
+  <img src="inst/add_actor.png" width="250">
   The output prints an id for the actor registered. 
 
 * Check the status of the actor :
@@ -79,6 +103,7 @@ With the requirements in place, you are now ready to get started.
   ag.actors.get(actorId='actorId')
 
   ```
+  <img src="inst/actor_status.png" width="250">
 
 * Executing the Actor
 
@@ -88,6 +113,9 @@ With the requirements in place, you are now ready to get started.
   ag.actors.sendMessage(actorId='actorId',
                            body={'message': 'Actor, this is test!'})
   ```
+  
+  
+  <img src="inst/send_message.png" width="250">
 
   This started an execution for the actor and throws an execution id. 
   Once a message is sent to an actor, workers for the actor take the message and start an actor container with the message.  
@@ -97,6 +125,8 @@ With the requirements in place, you are now ready to get started.
   ``` 
   ag.actors.getExecution(actorId=actorId, executionId=executionId)
   ```
+  
+  <img src="inst/getExecution.png" width="250">
 
 * View the logs
 
@@ -105,7 +135,8 @@ With the requirements in place, you are now ready to get started.
   ``` 
   ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
   ```
-
+  
+  <img src="inst/execution_logs.png" width="250">
 
 
 
