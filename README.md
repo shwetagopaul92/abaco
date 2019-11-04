@@ -163,9 +163,9 @@ With the requirements in place, you are now ready to get started.
   ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
   ```
   
-  > {'_links': {'execution': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr', 'owner': 
-    'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self':  
-    'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs'}, 'logs': 'Hello-world!\n'}
+ > {'_links': {'execution': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr', 'owner': 
+   'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self':  
+   'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs'}, 'logs': 'Hello-world!\n'}
 
 
 ### With Abaco CLI
