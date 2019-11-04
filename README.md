@@ -94,15 +94,14 @@ With the requirements in place, you are now ready to get started.
   ag.actors.add(body=my_actor)
   ``` 
   
-  > {'_links': {'executions': 'https://api.tacc.utexas.edu/actors/v2/pJ7q71MBjex1Z/executions', 'owner':        
-  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/pJ7q71MBjex1Z'},  
-  'createTime': '2019-11-04 16:30:07.224509', 'defaultEnvironment': {}, 'description': 'Simple actor to print hello-world.', 
-  'gid': 862347, 'hints': [], 'id': 'pJ7q71MBjex1Z', 'image': 'reshg/hello-world-actor', 'lastUpdateTime': '2019-11-04 
-  16:30:07.224509', 'link': '', 'mounts': [], 'name': 'hello-world-actor', 'owner': 'sgopal', 'privileged': False, 'queue': 
+  > {'_links': {'executions': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions', 'owner': 
+  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq'}, 
+  'createTime': '2019-11-04 16:50:49.155654', 'defaultEnvironment': {}, 'description': 'Simple actor to print hello-world.', 
+  'gid': 862347, 'hints': [], 'id': 'RxbWwWyWpealq', 'image': 'reshg/hello-world-actor', 'lastUpdateTime': '2019-11-04 
+  16:50:49.155654', 'link': '', 'mounts': [], 'name': 'hello-world-actor', 'owner': 'sgopal', 'privileged': False, 'queue': 
   'default', 'state': {}, 'stateless': True, 'status': 'SUBMITTED', 'statusMessage': '', 'tasdir': '06935/sgopal', 'token': 
   'false', 'type': 'none', 'uid': 862347, 'useContainerUid': False, 'webhook': ''}
   
-  <img src="inst/add_actor.png" height="50" width="75">
   
   The output prints an **actor id** for the actor registered. 
 
@@ -111,7 +110,14 @@ With the requirements in place, you are now ready to get started.
   ```
   ag.actors.get(actorId='actorId')
   ```
-  <img src="inst/actor_status.png" width="100">
+
+  > {'_links': {'executions': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions', 'owner': 
+  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq'}, 
+  'createTime': '2019-11-04 16:50:49.155654', 'defaultEnvironment': {}, 'description': 'Simple actor to print hello-world.', 
+  'gid': 862347, 'hints': [], 'id': 'RxbWwWyWpealq', 'image': 'reshg/hello-world-actor', 'lastUpdateTime': '2019-11-04 
+  16:50:49.155654', 'link': '', 'mounts': [], 'name': 'hello-world-actor', 'owner': 'sgopal', 'privileged': False, 'queue': 
+  'default', 'state': {}, 'stateless': True, 'status': 'READY', 'statusMessage': ' ', 'tasdir': '06935/sgopal', 'token': 
+  'false', 'type': 'none', 'uid': 862347, 'useContainerUid': False, 'webhook': ''}
   
   When the actor's worker is initialized, it's **status** will change from SUBMITTED to READY. 
 
@@ -126,8 +132,11 @@ With the requirements in place, you are now ready to get started.
   ```
   
   
-  <img src="inst/send_message.png" width="250">
-
+  > {'_links': {'messages': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/messages', 'owner': 
+  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 
+  'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr'}, 'executionId': 'zXpPjZmDVNDWr', 'msg': 
+  'Hello-world!'}
+  
   This started an execution for the actor and throws an **execution id**. 
   Once a message is sent to an actor, workers for the actor take the message and start an actor container with the message.  
 
@@ -137,7 +146,14 @@ With the requirements in place, you are now ready to get started.
   ag.actors.getExecution(actorId=actorId, executionId=executionId)
   ```
   
-  <img src="inst/getExecution.png" width="250">
+ > {'_links': {'logs': 'https://api.tacc.utexas.edu/actors/v2/TACC-PROD_RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs', 'owner': 
+  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 'https://api.tacc.utexas.edu/actors/v2/TACC-
+  PROD_RxbWwWyWpealq/executions/zXpPjZmDVNDWr'}, 'actorId': 'RxbWwWyWpealq', 'apiServer': 'https://api.tacc.utexas.edu', 
+  'cpu': 0, 'executor': 'sgopal', 'exitCode': 0, 'finalState': {'Dead': False, 'Error': '', 'ExitCode': 0, 'FinishedAt': 
+  '2019-11-04T16:51:42.785892147Z', 'OOMKilled': False, 'Paused': False, 'Pid': 0, 'Restarting': False, 'Running': False, 
+  'StartedAt': '2019-11-04T16:51:42.448167824Z', 'Status': 'exited'}, 'id': 'zXpPjZmDVNDWr', 'io': 0, 'messageReceivedTime': 
+  '2019-11-04 16:51:31.502243', 'runtime': 1, 'startTime': '2019-11-04 16:51:41.754348', 'status': 'COMPLETE', 'workerId': 
+  'oAG8X0lvEJ0rR'}
 
 * View the logs
 
@@ -147,8 +163,9 @@ With the requirements in place, you are now ready to get started.
   ag.actors.getExecutionLogs(actorId=actorId, executionId=executionId)
   ```
   
-  <img src="inst/execution_logs.png" width="250">
-
+  > {'_links': {'execution': 'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr', 'owner': 
+    'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self':  
+    'https://api.tacc.utexas.edu/actors/v2/RxbWwWyWpealq/executions/zXpPjZmDVNDWr/logs'}, 'logs': 'Hello-world!\n'}
 
 
 ### With Abaco CLI
