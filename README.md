@@ -94,7 +94,7 @@ With the requirements in place, you are now ready to get started.
 
   ``` 
   
-  <img src="inst/add_actor.png" width="500" height="250">
+  <img src="inst/add_actor.png" width="50" height="250">
   The output prints an id for the actor registered. 
 
 * Check the status of the actor :
