@@ -189,9 +189,9 @@ With the requirements in place, you are now ready to get started.
 
   1.) List the abaco names
     
-      ```
-      abaco list
-      ```
+     ```
+     abaco list
+     ```
      
      Returns list of actor names, IDs, and statuses (or the JSON description of
      an actor if an ID or alias is provided)
@@ -230,13 +230,13 @@ With the requirements in place, you are now ready to get started.
       Giving READ permissions to another user. 
       
      ```
-           abaco permissions -u jfonner -p READ R5jlv4RzKqQPe   
+     abaco permissions -u jfonner -p READ R5jlv4RzKqQPe   
      ```
    
    6.) Delete an actor
      
      ```
-           abaco delete actorId    
+     abaco delete actorId    
      ``` 
       
      > Actor deleted successfully. 
