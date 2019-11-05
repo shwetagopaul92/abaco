@@ -130,6 +130,14 @@ With the requirements in place, you are now ready to get started.
   ``` 
   ag.actors.sendMessage(actorId='actorId',
                            body={'message': 'Actor, this is test!'})
+  ```
+  
+  > {'_links': {'messages': 'https://api.tacc.utexas.edu/actors/v2/zPK1x0PkXM7vN/messages', 'owner': 
+  'https://api.tacc.utexas.edu/profiles/v2/sgopal', 'self': 
+  'https://api.tacc.utexas.edu/actors/v2/zPK1x0PkXM7vN/executions/qm4O3q5zWoQzD'}, 'executionId': 'qm4O3q5zWoQzD', 'msg': 
+  'Test!'}
+  
+  ```
   ag.actors.sendMessage(actorId='actorId', body={'message':'Hello-world!'})
   ```
   
