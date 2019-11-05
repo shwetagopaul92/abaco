@@ -4,7 +4,7 @@
 
 1. TACC Account: https://portal.tacc.utexas.edu/account-request
 2. Create a Docker account: https://hub.docker.com/
-3. Install the TACC Cloud Python SDK - ` pip install agavepy `
+3. Install the TACC Cloud Python SDK - ` pip3 install agavepy `
 
 ## Getting Started
 
