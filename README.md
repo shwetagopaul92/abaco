@@ -78,19 +78,21 @@ With the requirements in place, you are now ready to get started.
   Build and push the docker image to Docker Hub. 
   
   ```
-  docker build -t dockerhub_username/actorimagetag . 
+  docker build -t user/hello-world-actor . 
 
-  docker push dockerhub_username/actorimagetag  
+  docker push user/hello-world-actor  
   ```
   
   
 * Register the Actor 
+
   Register the Docker image as an Abaco actor with the Agave client. 
 
   ```
   from agavepy.agave import Agave
   ag = Agave(api_server='https://api.tacc.utexas.edu', token='<access_token>')
-  my_actor = {"image": "user/my_actor", "name": "hello-world-actor", "description": "Simple actor to say hello-world."}
+  my_actor = {"image": "user/hello-world-actor", "name": "hello-world-actor", "description": "Simple actor to say hello-  
+  world."}
   ag.actors.add(body=my_actor)
   ``` 
   
@@ -181,7 +183,7 @@ With the requirements in place, you are now ready to get started.
   auth-tokens-create -S
   ```
 
-* There are multiple ~15 subcommands with the CLI. We can create, list, delete, update, submit, check logs etc with the abaco CLI. 
+* There are multiple ~15 subcommands with the CLI. We can create, list, delete, update, submit, check logs etc with the abaco   CLI. 
 
 * Here, we illustrate how to list, send message, view logs, delete the actor we created with the SDK. 
 
