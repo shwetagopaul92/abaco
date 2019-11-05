@@ -188,15 +188,15 @@ With the requirements in place, you are now ready to get started.
 * Here, we illustrate how to list, send message, view logs, delete the actor we created with the SDK. 
 
   1.) List the abaco names
-  
-      ``` 
-      abaco list  
+    
+      ```
+      abaco list
       ```
      
-      Returns list of actor names, IDs, and statuses (or the JSON description of
-      an actor if an ID or alias is provided)
+     Returns list of actor names, IDs, and statuses (or the JSON description of
+     an actor if an ID or alias is provided)
      
-      > hello-world-actor  RxbWwWyWpealq  READY
+     > hello-world-actor  RxbWwWyWpealq  READY
 
   2.) Run the actor by sending a message
   
@@ -204,11 +204,11 @@ With the requirements in place, you are now ready to get started.
       abaco submit -m "hello-world" RxbWwWyWpealq
       ```
     
-      Output:
-      > R5jlv4RzKqQPe
-        hello-world
+      
+     > R5jlv4RzKqQPe
+       hello-world
 
-      This prints the execution id.
+     This prints the execution id.
       
   3.) Check execution/job status 
   
