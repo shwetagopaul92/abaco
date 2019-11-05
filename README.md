@@ -200,10 +200,9 @@ With the requirements in place, you are now ready to get started.
 
   2.) Run the actor by sending a message
   
-      ```
-      abaco submit -m "hello-world" RxbWwWyWpealq
-      ```
-    
+     ```
+     abaco submit -m "hello-world" RxbWwWyWpealq
+     ```
       
      > R5jlv4RzKqQPe
        hello-world
@@ -230,14 +229,14 @@ With the requirements in place, you are now ready to get started.
    5.) Sharing the actor
       Giving READ permissions to another user. 
       
-      ```
-      abaco permissions -u jfonner -p READ R5jlv4RzKqQPe   
-      ```
+     ```
+           abaco permissions -u jfonner -p READ R5jlv4RzKqQPe   
+     ```
    
    6.) Delete an actor
-   
-      ```
-      abaco delete actorId    
-      ```
+     
+     ```
+           abaco delete actorId    
+     ``` 
       
-      > Actor deleted successfully. 
+     > Actor deleted successfully. 
