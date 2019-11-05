@@ -129,7 +129,7 @@ With the requirements in place, you are now ready to get started.
 
   ``` 
   ag.actors.sendMessage(actorId='actorId',
-                           body={'message': 'Actor, this is test!'})
+                           body={'message': 'Test!'})
   ```
   
   > {'_links': {'messages': 'https://api.tacc.utexas.edu/actors/v2/zPK1x0PkXM7vN/messages', 'owner': 
