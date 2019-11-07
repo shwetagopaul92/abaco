@@ -33,6 +33,15 @@ With the requirements in place, you are now ready to get started.
 
   Running ` ag.profiles.get() ` would show the current user's profile. 
 
+* To reuse an existing token:
+  
+  ```
+  ag = Agave(api_server='https://api.tacc.utexas.edu',
+  ...            username='your username', password='your password',
+  ...            client_name='my_client',
+  ...            api_key='key',
+  ...            api_secret='secret')
+  ```
 
 ## Exercise: Deploy a hello-world container with Abaco
 
